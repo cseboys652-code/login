@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Adhiparasakthi College Form</title>
+<title>Adhiparasakthi College Login</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
     body {
         margin: 0;
-        font-family: Arial, sans-serif;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        /* clean animated background */
         background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
         background-size: 300% 300%;
-        animation: bg 8s infinite;
+        animation: bg 8s ease infinite;
     }
 
     @keyframes bg {
@@ -34,13 +40,38 @@
         box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
-    input, textarea {
+    .logo {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 5px 0;
+        color: #222;
+    }
+
+    h2 {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    input {
         width: 100%;
         padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
+        margin: 8px 0;
         border: 1px solid #ccc;
+        border-radius: 8px;
         outline: none;
+    }
+
+    input:focus {
+        border-color: #138808;
+        box-shadow: 0 0 6px rgba(19,136,8,0.4);
     }
 
     button {
@@ -50,11 +81,18 @@
         color: white;
         border: none;
         border-radius: 8px;
+        font-size: 16px;
         cursor: pointer;
     }
 
     button:hover {
         opacity: 0.9;
+    }
+
+    .footer {
+        margin-top: 10px;
+        font-size: 12px;
+        color: gray;
     }
 </style>
 </head>
@@ -63,21 +101,38 @@
 
 <div class="box">
 
-    <h2>Adhiparasakthi College Form</h2>
+    <!-- LOGO (must be in same repo as logo.png) -->
+    <img src="logo.png" alt="College Logo" class="logo">
 
-    <!-- ✅ YOUR FORMCARRY ENDPOINT -->
-    <form action="https://formcarry.com/s/RLMwi-19fZB" method="POST">
+    <!-- COLLEGE NAME -->
+    <h1>ADHIPARASAKTHI COLLEGE OF ENGINEERING</h1>
+    <h2>Student Login Portal</h2>
 
-        <input type="text" name="username" placeholder="Username" required>
+    <!-- SAFE LOGIN FORM (NO BLOCKING) -->
+    <form onsubmit="return loginUser()">
 
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
 
-        <textarea name="message" placeholder="Message" required></textarea>
-
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
     </form>
 
+    <div class="footer">
+        “Excellence is a continuous process and not an accident” 🚀
+    </div>
+
 </div>
+
+<script>
+function loginUser() {
+    let user = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+
+    alert("Login Successful!\nUsername: " + user);
+
+    return false; // prevents page reload
+}
+</script>
 
 </body>
 </html>
