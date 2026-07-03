@@ -10,9 +10,13 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
         background-size: 300% 300%;
-        animation: bg 8s ease infinite;
+        animation: bg 8s infinite;
     }
 
     @keyframes bg {
@@ -21,39 +25,57 @@
         100% { background-position: 0% 50%; }
     }
 
-    .container {
-        width: 100%;
-        max-width: 900px;
-        margin: auto;
+    .box {
+        width: 380px;
         padding: 30px;
+        background: white;
+        border-radius: 15px;
         text-align: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
-    h1 {
-        color: #222;
-    }
-
-    iframe {
+    input, textarea {
         width: 100%;
-        height: 800px;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #FF9933, #138808);
+        color: white;
         border: none;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        opacity: 0.9;
     }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
-    <h1>ADHIPARASAKTHI COLLEGE OF ENGINEERING</h1>
-    <p>Student Feedback Form</p>
+    <h2>Adhiparasakthi College Form</h2>
 
-    <!-- GOOGLE FORM EMBED -->
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfB66QD9iD0fMVEdwvhb05aE_ayXmpxGQTivo_fU_YFq--nkA/viewform?embedded=true">
-    </iframe>
+    <!-- ✅ YOUR FORMCARRY ENDPOINT -->
+    <form action="https://formcarry.com/s/RLMwi-19fZB" method="POST">
+
+        <input type="text" name="username" placeholder="Username" required>
+
+        <input type="email" name="email" placeholder="Email" required>
+
+        <textarea name="message" placeholder="Message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
 
 </div>
 
