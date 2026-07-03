@@ -9,6 +9,7 @@
 <style>
     * {
         box-sizing: border-box;
+        font-family: Arial, sans-serif;
     }
 
     body {
@@ -17,9 +18,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: Arial, sans-serif;
 
-        /* 🌈 Animated tricolor background */
         background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
         background-size: 300% 300%;
         animation: bg 8s ease infinite;
@@ -33,7 +32,6 @@
 
     .box {
         width: 380px;
-        max-width: 90%;
         padding: 30px;
         background: white;
         border-radius: 15px;
@@ -45,34 +43,33 @@
         width: 90px;
         height: 90px;
         object-fit: cover;
-        border-radius: 12px;
         margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 18px;
         margin: 5px 0;
         color: #222;
     }
 
     h2 {
-        font-size: 15px;
+        font-size: 14px;
         color: #555;
         margin-bottom: 20px;
     }
 
-    input {
+    input, textarea {
         width: 100%;
         padding: 12px;
-        margin: 10px 0;
+        margin: 8px 0;
         border: 1px solid #ccc;
         border-radius: 8px;
         outline: none;
     }
 
-    input:focus {
+    input:focus, textarea:focus {
         border-color: #138808;
-        box-shadow: 0 0 8px rgba(19,136,8,0.4);
+        box-shadow: 0 0 6px rgba(19,136,8,0.4);
     }
 
     button {
@@ -91,7 +88,7 @@
     }
 
     .footer {
-        margin-top: 12px;
+        margin-top: 10px;
         font-size: 12px;
         color: gray;
     }
@@ -102,20 +99,22 @@
 
 <div class="box">
 
-    <!-- LOGO (must be inside same GitHub repo) -->
+    <!-- LOGO (must be in same repo as logo.png) -->
     <img src="logo.png" alt="College Logo" class="logo">
 
     <h1>ADHIPARASAKTHI COLLEGE OF ENGINEERING</h1>
-    <h2>Login Portal</h2>
+    <h2>Student Feedback Portal</h2>
 
-    <!-- ✅ FINAL FORMSPREE FORM -->
+    <!-- WORKING FORMSPREE FORM -->
     <form action="https://formspree.io/f/mojopzgb" method="POST">
 
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="username" placeholder="Enter Username" required>
 
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
 
-        <button type="submit">Login</button>
+        <textarea name="message" placeholder="Enter Message / Feedback" required></textarea>
+
+        <button type="submit">Submit</button>
     </form>
 
     <div class="footer">
